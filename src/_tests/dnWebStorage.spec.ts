@@ -31,7 +31,7 @@ describe('dnWebStorage', () => {
 				expect($clearObject($storage)).toEqual({});
 				for(var key in $storage) {
 					expect(key).toBeUndefined();
-				}
+				}	
 			}]));
 
 			describe('$defaults', () => {

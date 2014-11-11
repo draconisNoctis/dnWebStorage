@@ -11,14 +11,14 @@ var dnWebStorage;
     (function (STORAGE_TYPE) {
         STORAGE_TYPE[STORAGE_TYPE["LOCAL"] = 0] = "LOCAL";
         STORAGE_TYPE[STORAGE_TYPE["SESSION"] = 1] = "SESSION";
-    })(dnWebStorage.STORAGE_TYPE || /* istanbul ignore next */(dnWebStorage.STORAGE_TYPE = {}));
+    })(dnWebStorage.STORAGE_TYPE || (dnWebStorage.STORAGE_TYPE = {}));
     var STORAGE_TYPE = dnWebStorage.STORAGE_TYPE;
 
     var STORAGE_MAP;
     (function (STORAGE_MAP) {
         STORAGE_MAP[STORAGE_MAP["localStorage"] = 0] = "localStorage";
         STORAGE_MAP[STORAGE_MAP["sessionStorage"] = 1] = "sessionStorage";
-    })(STORAGE_MAP || /* istanbul ignore next */(STORAGE_MAP = {}));
+    })(STORAGE_MAP || (STORAGE_MAP = {}));
 
     /* istanbul ignore next */
     var StorageProto = (function () {
@@ -163,5 +163,5 @@ var dnWebStorage;
     dnWebStorage.SessionStorageProvider = SessionStorageProvider;
 
     angular.module('dnWebStorage', ['ng']).provider('dnSessionStorage', SessionStorageProvider).provider('dnLocalStorage', LocalStorageProvider).factory('dnSessionStorageStore', storageStoreFactory(1 /* SESSION */)).factory('dnLocalStorageStore', storageStoreFactory(0 /* LOCAL */));
-})(dnWebStorage || /* istanbul ignore next */(dnWebStorage = {}));
+})(dnWebStorage || (dnWebStorage = {}));
 //# sourceMappingURL=dnWebStorage.js.map
